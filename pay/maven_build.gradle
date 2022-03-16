@@ -5,9 +5,9 @@ ext {
     // 从Github上clone下来的项目的本地地址
     GITHUB_REPO_PATH = "G:\\ICode\\WePay"
     // compile 'com.audienl:super_library:1.0.0'
-    PUBLISH_GROUP_ID = 'com.wenote.commom'
+    PUBLISH_GROUP_ID = 'com.wenote.comm'
     PUBLISH_ARTIFACT_ID = 'wpay'
-    PUBLISH_VERSION = '1.0.1'
+    PUBLISH_VERSION = '1.0.0'
 }
 
 uploadArchives {
