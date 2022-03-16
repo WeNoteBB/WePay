@@ -1,4 +1,5 @@
 rootProject.name='WePay'
 include ':app'
-include ':pay'
-include ':apay'
+//include ':pay'
+include ':alipay'
+include ':wxin'
