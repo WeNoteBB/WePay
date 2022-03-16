@@ -1,0 +1,3 @@
+rootProject.name='WePay'
+include ':app'
+include ':pay'
