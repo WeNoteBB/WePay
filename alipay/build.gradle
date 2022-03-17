@@ -3,20 +3,20 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'com.kezong.fat-aar'
 
-boolean simpleCompile = true
+boolean simpleCompile = false
 
 String GITHUB_REPO_PATH = "G:\\ICode\\WePay"
 String PUBLISH_GROUP_ID = 'com.wenote'
 String PUBLISH_ARTIFACT_ID = 'alipay'
-String PUBLISH_VERSION = '1.0.1'
+String PUBLISH_VERSION = '1.0.0.001'
 
 task buildAliTask() {
     println "----------------------------\n 初始化构建参数 buildAliTask"
     if (simpleCompile) {
-        println "简单模式，不需要打包支付宝的aar包"
+        println " 简单模式，不需要打包支付宝的aar包"
         PUBLISH_ARTIFACT_ID = 'alipay_simple'
     } else {
-        println '复杂模式，将需要打包支付宝aar包'
+        println ' 复杂模式，将需要打包支付宝aar包'
         PUBLISH_ARTIFACT_ID = 'alipay_advance'
     }
 }

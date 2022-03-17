@@ -1,4 +1,4 @@
-package com.wenote.pay.pay.apay
+package com.wenote.apay
 
 import com.wenote.pay.chain.RealChain
 import com.wenote.pay.pay.PayResultInterceptor
