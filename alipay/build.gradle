@@ -3,6 +3,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'com.kezong.fat-aar'
 
+// https://github.com/kezong/fat-aar-android/blob/master/README_CN.md 集成打包
 boolean simpleCompile = false
 
 String GITHUB_REPO_PATH = "G:\\ICode\\WePay"
