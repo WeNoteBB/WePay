@@ -1,6 +1,25 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.kezong.fat-aar'
+
+boolean simpleCompile = false
+
+String GITHUB_REPO_PATH = "G:\\ICode\\WePay"
+String PUBLISH_GROUP_ID = 'com.wenote'
+String PUBLISH_ARTIFACT_ID = 'alipay'
+String PUBLISH_VERSION = '1.0.1'
+
+task buildAliTask() {
+    println "----------------------------\n 初始化构建参数 buildAliTask"
+    if (simpleCompile) {
+        println "简单模式，不需要打包支付宝的aar包"
+        PUBLISH_ARTIFACT_ID = 'alipay_simple'
+    } else {
+        println '复杂模式，将需要打包支付宝aar包'
+        PUBLISH_ARTIFACT_ID = 'alipay_advance'
+    }
+}
 
 android {
     compileSdkVersion 31
@@ -25,8 +44,21 @@ android {
 
 }
 
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar','*.aar'])
+    if (simpleCompile) {
+        println "----------------------------\n 普通模式"
+        implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
+    } else {
+        println "----------------------------\n 高级模式"
+        embed(name: 'alipaysdk_v1.00', ext: 'aar')
+    }
+
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.0.2'
     implementation 'androidx.core:core-ktx:1.0.2'
@@ -35,4 +67,29 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
     implementation 'com.wenote:wpay:1.0.3'
+}
+
+apply plugin: 'maven'
+
+uploadArchives() {
+    repositories.mavenDeployer {
+        def deployPath = file(GITHUB_REPO_PATH)
+        repository(url: "file://${deployPath.absolutePath}")
+        println "----------------------------\n uploadArchives"
+        pom.project {
+            groupId PUBLISH_GROUP_ID
+            artifactId PUBLISH_ARTIFACT_ID
+            version PUBLISH_VERSION
+        }
+    }
+}
+
+// 源代码一起打包(不需要打包源代码的不要添加这几行)
+task androidSourcesJar(type: Jar) {
+    classifier = 'sources'
+    from android.sourceSets.main.java.sourceFiles
+}
+
+artifacts {
+    archives androidSourcesJar
 }

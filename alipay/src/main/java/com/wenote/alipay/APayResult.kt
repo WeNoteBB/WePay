@@ -1,4 +1,4 @@
-package com.yctapp.base.frame.pay.interceptor.apay
+package com.wenote.pay.pay.apay
 
 object APayResult {
     var hash: Int = 0

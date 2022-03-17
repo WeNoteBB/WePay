@@ -3,7 +3,6 @@ package com.wenote.pay.pay.apay
 import com.wenote.pay.chain.RealChain
 import com.wenote.pay.order.PayResult
 import com.wenote.pay.pay.IPayInterceptor
-import com.yctapp.base.frame.pay.interceptor.apay.APayResult
 import com.wenote.alipay.utils.Alipay
 import org.json.JSONException
 import org.json.JSONObject
