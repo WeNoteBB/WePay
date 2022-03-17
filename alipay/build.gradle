@@ -3,7 +3,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'com.kezong.fat-aar'
 
-boolean simpleCompile = false
+boolean simpleCompile = true
 
 String GITHUB_REPO_PATH = "G:\\ICode\\WePay"
 String PUBLISH_GROUP_ID = 'com.wenote'
