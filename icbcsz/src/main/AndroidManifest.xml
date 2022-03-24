@@ -1,0 +1,7 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.wenote.icbcsz" >
+
+    <application>
+        <activity android:name="com.yctapp.base.frame.pay.interceptor.icbc.ICBCSBFormActivity" />
+    </application>
+</manifest>

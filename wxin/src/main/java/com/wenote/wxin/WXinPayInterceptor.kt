@@ -81,7 +81,7 @@ class WXinPayInterceptor : IPayInterceptor {
         }
         result.payResult.payInfoHashCode = 0
 
-        RxBus.getInstance().post(result)
+        chain.callNext()
     }
 
     override fun onResume() {

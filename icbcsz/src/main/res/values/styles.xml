@@ -1,0 +1,11 @@
+<resources>
+
+    <style name="WhiteBlackTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="colorPrimary">#00ffffff</item>
+        <item name="colorPrimaryDark">#00ffffff</item>
+        <item name="colorAccent">#000000</item>
+        <item name="android:windowBackground">#000000</item>
+    </style>
+</resources>

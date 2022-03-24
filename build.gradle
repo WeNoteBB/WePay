@@ -16,6 +16,7 @@ buildscript {
 allprojects {
     repositories {
         maven { url "https://raw.githubusercontent.com/WeNoteBBi/WePay/master/" }
+        maven { url "https://raw.githubusercontent.com/WeNoteBBi/AppStartUp/master/" }
         maven { url 'https://maven.aliyun.com/repository/public' }
         maven { url 'https://maven.aliyun.com/repository/central' }
         maven { url 'https://maven.aliyun.com/repository/google' }
